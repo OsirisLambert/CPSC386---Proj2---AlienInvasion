@@ -149,7 +149,7 @@ def change_fleet_direction(ai_settings, aliens):
     ai_settings.fleet_direction *= -1
 
 def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets):
-    if stats.ships_left > 0:
+    if stats.ships_left > 1:
         stats.ships_left -= 1
 
         sb.prep_ships()
@@ -163,6 +163,7 @@ def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets):
         sleep(0.5)
     else:
         stats.game_active = False
+        pygame.mouse.set_visible(True)
 
 
 def check_aliens_bottom(ai_settings, screen, stats, sb, ship, aliens, bullets):
